@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physikós</title>
+    <link rel="stylesheet" href="../../styles/style.css"> <!--Estilos Generales-->
+    <link rel="stylesheet" href="../../styles/simuladores.css"> <!--Estilos de simuladores-->
+    <link rel="icon" href="../../img/iconHeadW.svg">
+</head>
+
+<body >
+    <div class="container__grid">
+        <div class="header" id="header">
+            <div class="header_content-namePage">
+                <a href="../../index.html">
+                    <div class="imgname"></div>
+                </a>
+                <div id="btn_menu_sim" class="btn-menu-sim" title=""></div>
+            </div>
+            <div class="header_content-img"><a href="https://www.uce.edu.ec/" target="_BLANK"><img src="https://aka-cdn.uce.edu.ec/ares/tmp/logo3.png" alt=""></a></div>
+        </div>
+
+        <div class="menu menu_dsm">
+            <nav class="menu_nav">
+                <!--<div class="content__search"></div>-->
+                <div class="content__content">
+                <p><a class="toc-part" href="../../index.html">Introducción</a></p>
+                <p class="current-part"><a class="toc-part" href="simuladores.html">Simuladores</a></p>
+                <p class="current current-part"><a class="toc-section" href="pendulo_simple.html">Péndulo Simple</a></p>
+                <!--<p class="current-part"><a class="toc-section" href="pendulo_doble.html">Péndulo Doble</a></p>
+                <p class="current-part"><a class="toc-section" href="pendulo_triple.html">Péndulo Triple</a></p>-->
+                <p><a class="toc-part" href="../graficadores/graficadores.html">Graficadores</a></p>
+                <p><a class="toc-part" href="../proyectos/proyectos.html">Proyectos</a></p>
+                <p><a class="toc-part" href="../repositorio_formulas/repositorio_formulas.html">Repositorio de Ecuaciones</a></p>
+                <p><a class="toc-part" href="#">Repositorio de Planes de Clase</a></p>
+                <p><a class="toc-part" href="#">Repositorio de Materia</a></p>
+                <p><a class="toc-part" href="../repositorio_libros/repositorio_libros.html">Repositorio de Libros</a></p>
+                <p><a class="toc-part" href="../autores/autores.html">Hoja de vida</a></p></div>
+                <!--<div class="content__Lenguaje">
+                    <span>Lenguaje</span>
+                    <label class="lenguaje-btn-content" for="click-lenguaje">
+                        <span class="before">EN</span>
+                        <input type="checkbox" id="click-lenguaje">
+                        <span class="before">ES</span>
+                    </label>
+                </span></div>-->
+                <div class="content__DarkMode">
+                    <span>DarkMode</span>
+                    <label class="darmode-btn-content" for="click-DarkMode">
+                        <i class="btn-sun"></i>
+                        <input type="checkbox" id="click-DarkMode">
+                        <i class="btn-moon"></i>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        <div class="main" id="main-despleglabe">
+            <section class="main_s1">
+             <div class="manual-title">
+                        Universidad Central del Ecuador
+                    </div>
+
+                    <div class="manual-version">
+                        Facultad de Filosofía, Letras y Ciencias de la Educación
+                    </div>
+
+                    <div class="manual-html-title">
+                        Carrera de Pedagogía en las Ciencias Experimentales Matemática y Física
+                    </div>
+
+                    <div class="manual-mantenimiento">
+                        <span>Mantenida por:<a href="#" class="pepsi"> Chari Castillo Fernando Javier.</a></span>
+                    </div>
+
+                    <div class="manual-html-explanation">
+                        Simulador Péndulo Simple
+                    </div>
+            </section>
+            <section class="main_s2_pendulo">
+                <div class="loader-page"></div>
+                <div class="topmenu">
+                    <div class="item Intro selected" id="Intro">Introducción</div>
+                    <div class="item Plots noselected" id="Plots">Diagramas</div>
+                    <div class="item Twoplot noselected" id="Twoplot">Dos péndulos</div>
+                </div>
+                <div class="container-table" id="container">
+                    <canvas id="canvas_simulador"></canvas>
+                    <div class="timer" id="timer">
+                    <div class="display">
+                        <label id="minutes" class="hours">00</label><span class="puntos">:</span><label id="seconds" class="minutes">00</label><span class="punto">.</span><label id="miliseconds" class="seconds">00</label>
+                    </div>
+                    <div class="btn_timer">
+                        <div id="start" class="start"></div> 
+                        <div id="stop" class="stop" style="display: none;"><span></span></div>
+                        <div id="restartime" class="restartime" style="display: none;"></div> 
+                        <div id="hidetime" class="hidetime"></div> 
+                    </div>
+                    </div>
+                </div>
+                <div class="simulador-table" id="longitud">
+                    <div class="tablas longitud">
+                        <div class="title-sim">
+                            <p class="parrafo">Longitud: <span><output id="valuel">6</output> m</span></p>
+                        </div>
+                        <!--Ingresar datos de L1-->
+                        <div class="caja-sim">
+                            <div class="btnless" id="btnless"></div>
+                            <div class="deslizador">
+                            <div class="raya-horizontal">
+                                <input type="range" id="l" name="l" min="10" max="100" value="64" step="10">
+                                <div class="tarjas1"><span class="l1min">0</span></div>
+                                <div class="tarjas2"><span class="l1max">10</span></div>
+                            </div>
+                            <div id="selectorl">
+                                <div class="Btnselector">
+                                    <div class="raya"></div>
+                                </div>
+                            </div>
+                            </div> 
+                            <div class="btnmore" id="btnmore"></div>
+                        </div>
+                        <div class="title-sim">
+                            <p class="parrafo">Masa: <span><output id="valuem1">2</output> kg</span></p>
+                        </div>
+                        <!--Ingresar datos de m1-->
+                        <div class="caja-sim">
+                            <div class="btnless" id="btnlessm"></div>
+                            <div class="deslizador">
+                            <div class="raya-horizontal">
+                                <input type="range" id="m1" name="m1" min="10" max="100" value="24" step="10">
+                                <div class="tarjas1"><span class="m1min">0</span></div>
+                                <div class="tarjas2"><span class="m1max">10</span></div>
+                            </div>
+                            <div id="selectorm1">
+                                <div class="Btnselector">
+                                    <div class="raya"></div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="btnmore" id="btnmorem"></div>
+                        </div>
+                    </div>
+                    <div class="tablas gravedad">
+                        <div class="title-sim">
+                            <p class="parrafo">Gravedad</p>
+                        </div>
+                        <!--Ingresar datos de m1-->
+                        <div class="caja-sim-purple">
+                            <div class="deslizador">
+                            <div class="raya-horizontal">
+                                <input type="range" id="gravedad" name="gravedad" min="0" max="100" value="32.7" step="0.01">
+                                <div class="tarjasmin"><span class="lettermin">Nada</span></div>
+                                <div class="tarjasmax"><span class="lettermax">Mucha</span></div>
+                            </div>
+                            <div id="selectorg">
+                                <div class="Btnselectoralf">
+                                    <div class="raya"></div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <select class="slectlist" id="slectlist">
+                            <option value="">Personalizar</option>
+                            <option value="Value1">Luna</option>
+                            <option value="Value2">Tierra</option>
+                            <option value="Value3">Marte</option>
+                            <option value="Value4">Júpiter</option>
+                        </select>
+                        <div class="title-sim">
+                            <p class="parrafo">Fricción</p>
+                        </div>
+                        <!--Ingresar datos de m1-->
+                        <div class="caja-sim-purple">
+                            <div class="deslizador">
+                            <div class="raya-horizontal">
+                                <input type="range" id="friccion" name="fr" min="0" max="10" value="0">
+                                <div class="tarjasmin"><span class="lettermin">Nada</span></div>
+                                <div class="tarjastep1"></div>
+                                <div class="tarjastep2"></div>
+                                <div class="tarjastep3"></div>
+                                <div class="tarjastep4"></div>
+                                <div class="tarjasinter"></div>
+                                <div class="tarjastep5"></div>
+                                <div class="tarjastep6"></div>
+                                <div class="tarjastep7"></div>
+                                <div class="tarjastep8"></div>
+                                <div class="tarjasmax"><span class="lettermax">Mucha</span></div>
+                            </div>
+                            <div id="selectorfr">
+                                <div class="Btnselectoralf">
+                                    <div class="raya"></div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <div class="btnstart" id="btnstart"></div>
+                    <div class="btnstop" id="btnstop"></div>
+                    <div class="restart" id="restart" style="display: none;"></div>
+                    <div class="btnstep" id="btnstep" style="display: none;"></div>
+                    <div class="hidebtnstep" id="hidebtnstep"></div>
+                </div>
+                <div class="checkbox-container">
+                    <label class="checkbox-lable">
+                        <input type="checkbox" id="checkbox_first">
+                        <span class="ckeckmark"></span>
+                        Cronómetro
+                    </label>
+                    <label class="checkbox-lable">
+                        <input type="checkbox" id="checkbox-second">
+                        <span class="ckeckmark"></span>
+                        Rastro del periodo
+                    </label>
+                </div>
+                <div class="yesnobox-container">
+                    <form>
+                        <input type="radio" id="Cnormal" name="fav_language" checked>
+                        <label class="yesnomark" for="Cnormal">Cámara Normal</label><br>
+                        <input type="radio" id="Cslow" name="fav_language">
+                        <label class="yesnomark" for="Cslow">Cámara Lenta</label>
+                    </form>
+                </div>
+            </section>
+            <section class="main_s3" id="introducion"></section>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left">
+                <a href="#">Licencia</a>
+                <a href="#">| Git Hub</a> 
+            </div>
+            <div class="footer-right"></div>
+        </div>
+        <div class="indicador_container">
+            <div class="indicador_scroll"></div>
+        </div>
+        <div id="btn-top" class="ocultar" title="Subir">
+            <i class="btn-up"></i>
+        </div>   
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!--Script para utilizar jquerys para el loaderpage-->
+    <script src="../../script/simuladores/menu_sim.js" defer></script> <!--Script para el menu desplegable-->
+    <script src="../../script/flecha.js" defer></script> <!--Script para la flecha de subir al inicio de la pagina-->
+    <script src="../../script/pendulo_simple/cronometro.js" defer></script> <!--Script del cronometro del simulador-->
+    <script src="../../script/pendulo_simple/btns_simuladores.js" defer></script> <!--Script para botones de play, aumentar, stop-->
+    <script src="../../script/pendulo_simple/run_scripts_sim.js" defer></script>
+    <script src="../../script/pendulo_simple/pendulo_simple.js" data-src></script>
+</body>
+</html>
